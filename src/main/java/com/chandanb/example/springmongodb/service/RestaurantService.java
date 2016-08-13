@@ -59,7 +59,7 @@ public class RestaurantService {
         Resource resource = new ClassPathResource("restaurants.json");
         String line;
         DB db = mongo.getDB(mongoProperties.getDatabase());
-        DBCollection restaurant = db.getCollection("restaurant");
+        DBCollection restaurant = db.getCollection("restaurants");
         logger.info("Loading Default Restaurants Data");
         try(BufferedReader br = new BufferedReader(new InputStreamReader(resource.getInputStream()))){
             while ((line = br.readLine()) != null) {

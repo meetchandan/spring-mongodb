@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import java.io.Serializable;
 import java.util.Objects;
 
-@Document(collection = "restaurant")
+@Document(collection = "restaurants")
 public class Restaurant implements Serializable {
     @Id
     private String id;
