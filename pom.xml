@@ -50,6 +50,12 @@
             <artifactId>guava</artifactId>
             <version>r05</version>
         </dependency>
+        <dependency>
+            <groupId>junit-addons</groupId>
+            <artifactId>junit-addons</artifactId>
+            <version>1.4</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
