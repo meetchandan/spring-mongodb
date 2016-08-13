@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.TextScore;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -22,6 +23,8 @@ public class Restaurant implements Serializable {
     @Field("city")
     private String city;
 
+    @TextScore
+    private Float score;
     public Restaurant(String name, String city) {
         this.name = name;
         this.city = city;

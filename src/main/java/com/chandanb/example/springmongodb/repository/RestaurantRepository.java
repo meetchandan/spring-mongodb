@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface RestaurantRepository extends MongoRepository<Restaurant,String> {
     Restaurant findOneByName(String name);
-    List<Restaurant> findAllBy(TextCriteria textCriteria);
+    List<Restaurant> findAllByOrderByScoreDesc(TextCriteria textCriteria);
 }

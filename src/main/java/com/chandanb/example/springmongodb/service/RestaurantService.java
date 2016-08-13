@@ -43,7 +43,7 @@ public class RestaurantService {
 
     public List<Restaurant> findRestaurantsWithNameContaining(String name){
         TextCriteria textCriteria = new TextCriteria().matchingAny(name);
-        return Lists.newArrayList(restaurantRepository.findAllBy(textCriteria));
+        return Lists.newArrayList(restaurantRepository.findAllByOrderByScoreDesc(textCriteria));
     }
 
     public Restaurant findByName(String name) {

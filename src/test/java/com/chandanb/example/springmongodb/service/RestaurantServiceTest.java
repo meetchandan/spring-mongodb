@@ -57,14 +57,15 @@ public class RestaurantServiceTest {
     }
 
     @Test
-    public void shouldReturnRecordsWhichContainQueryInThierNameField(){
-        Restaurant restaurant = new Restaurant("JW Marriot", "California");
-        restaurant.setId("uniqueId");
-        Restaurant restaurant1 = new Restaurant("Marriot Blu", "LA");
-        restaurant.setId("uniqueId1");
-        restaurantService.save(restaurant);
+    public void shouldReturnRecordsSortedByScoreWhichContainQueryInThierNameField(){
+        Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California");
+        restaurant1.setId("uniqueId");
+        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA");
+        restaurant1.setId("uniqueId1");
         restaurantService.save(restaurant1);
+        restaurantService.save(restaurant2);
         List<Restaurant> actual = restaurantService.findRestaurantsWithNameContaining("marriot");
-        ListAssert.assertEquals(asList(restaurant, restaurant1), actual);
+        assertEquals(restaurant2, actual.get(0));
+        assertEquals(restaurant1, actual.get(1));
     }
 }
