@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 @Document(collection = "restaurant")
 public class Restaurant implements Serializable {
@@ -50,5 +51,15 @@ public class Restaurant implements Serializable {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        Restaurant res = (Restaurant) o;
+
+        return Objects.equals(id, res.id);
+
     }
 }
