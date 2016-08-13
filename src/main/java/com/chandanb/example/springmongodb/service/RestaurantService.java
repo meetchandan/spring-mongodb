@@ -14,7 +14,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.data.mongodb.core.query.TextCriteria;
-import org.springframework.data.util.StreamUtils;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
