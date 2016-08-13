@@ -1,1 +1,1 @@
-web: java -Xmx384m -Xss512k -XX:+UseCompressedOops -jar target/*.jar -Dspring.profiles.active=prod -Dserver.port=$PORT -Dspring.data.mongodb.uri=$MONGOLAB_URI
+java -Xmx384m -Xss512k -XX:+UseCompressedOops -jar target/*.jar -Dspring.profiles.active=prod -Dserver.port=$PORT -Dspring.data.mongodb.uri=$MONGOLAB_URI
