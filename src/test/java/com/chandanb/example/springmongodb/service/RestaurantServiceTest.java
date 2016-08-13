@@ -24,9 +24,6 @@ import static org.junit.Assert.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-@WebAppConfiguration
-@IntegrationTest
-@Transactional
 public class RestaurantServiceTest {
     private int defaultRestaurantCount;
 
@@ -44,13 +41,13 @@ public class RestaurantServiceTest {
     }
 
     @Test
-    public void testFindAll() {
+    public void shouldReturnAllRecordsOnFindAll() {
         assertEquals(restaurantService.findAll().size(), defaultRestaurantCount);
     }
 
 
     @Test
-    public void testSave() {
+    public void shouldSuccessfullySaveRecordInCollection() {
         Restaurant restaurant = new Restaurant("Marriot", "California");
         restaurantService.save(restaurant);
         assertEquals(restaurantService.findAll().size(), defaultRestaurantCount + 1);
@@ -58,15 +55,15 @@ public class RestaurantServiceTest {
     }
 
     @Test
-    public void testFindById() {
+    public void shouldFindById() {
         Restaurant restaurant = new Restaurant("Marriot", "California");
         restaurant.setId("uniqueId");
         restaurantService.save(restaurant);
-        assertEquals(restaurantService.findById("uniqueId"), restaurant);
+        assertEquals(restaurant, restaurantService.findById("uniqueId"));
     }
 
     @Test
-    public void testNameContaining(){
+    public void shouldReturnRecordsWhichContainQueryInThierNameField(){
         Restaurant restaurant = new Restaurant("JW Marriot", "California");
         restaurant.setId("uniqueId");
         Restaurant restaurant1 = new Restaurant("Marriot Blu", "LA");
@@ -74,6 +71,6 @@ public class RestaurantServiceTest {
         restaurantService.save(restaurant);
         restaurantService.save(restaurant1);
         List<Restaurant> actual = restaurantService.findRestaurantsWithNameContaining("marriot");
-        ListAssert.assertEquals(actual, asList(restaurant, restaurant1));
+        ListAssert.assertEquals(asList(restaurant, restaurant1), actual);
     }
 }
