@@ -21,6 +21,7 @@ public class Application {
     public static void main(String[] args) throws UnknownHostException {
         SpringApplication app = new SpringApplication(Application.class);
         SimpleCommandLinePropertySource source = new SimpleCommandLinePropertySource(args);
+        addDefaultProfile(app, source);
         app.run(args);
         System.out.println("Welcome to Spring Mongo DB Example!");
     }
