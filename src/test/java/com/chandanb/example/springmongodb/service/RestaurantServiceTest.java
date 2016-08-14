@@ -96,4 +96,17 @@ public class RestaurantServiceTest {
         assertEquals(restaurant2, actual.get(0));
         assertEquals(restaurant1, actual.get(1));
     }
+
+    @Test
+    public void shouldSearchOnCityField(){
+        Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California");
+        restaurant1.setId("uniqueId1");
+        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA");
+        restaurant2.setId("uniqueId2");
+        restaurantService.save(restaurant1);
+        restaurantService.save(restaurant2);
+        List<Restaurant> actual = restaurantService.findRestaurantsWithNameContaining("California");
+        assertEquals(1, actual.size());
+        assertEquals(restaurant1, actual.get(0));
+    }
 }

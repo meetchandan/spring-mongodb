@@ -17,10 +17,11 @@ public class Restaurant implements Serializable, Comparable<Restaurant> {
 
     @NotEmpty
     @Field("name")
-    @TextIndexed
+    @TextIndexed(weight = 2.5f)
     private String name;
 
     @Field("city")
+    @TextIndexed(weight = 1.5f)
     private String city;
 
     @TextScore
