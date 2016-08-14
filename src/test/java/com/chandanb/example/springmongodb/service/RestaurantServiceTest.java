@@ -19,8 +19,6 @@ import static org.junit.Assert.assertEquals;
 public class RestaurantServiceTest {
     private int defaultRestaurantCount;
 
-    private Restaurant testRestaurant = null;
-
     @Inject
     private RestaurantService restaurantService;
 
