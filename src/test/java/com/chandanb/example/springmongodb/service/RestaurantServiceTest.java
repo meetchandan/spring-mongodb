@@ -24,7 +24,6 @@ public class RestaurantServiceTest {
 
     @Before
     public void setup() throws Exception {
-        // Initialize test database.
         restaurantService.deleteAll();
         restaurantService.restoreDefaultRecords();
         defaultRestaurantCount = restaurantService.findAll().size();
@@ -34,11 +33,10 @@ public class RestaurantServiceTest {
     public void shouldReturnAllRecordsOnFindAll() {
         assertEquals(restaurantService.findAll().size(), defaultRestaurantCount);
     }
-
-
+    
     @Test
     public void shouldSuccessfullySaveRecordInCollection() {
-        Restaurant restaurant = new Restaurant("Marriot", "California");
+        Restaurant restaurant = new Restaurant("Marriot", "California", "MG Road, Shop No 10");
         restaurantService.save(restaurant);
         assertEquals(restaurantService.findAll().size(), defaultRestaurantCount + 1);
 
@@ -46,7 +44,7 @@ public class RestaurantServiceTest {
 
     @Test
     public void shouldFindById() {
-        Restaurant restaurant = new Restaurant("Marriot", "California");
+        Restaurant restaurant = new Restaurant("Marriot", "California", "No. 24, Statue Road");
         restaurant.setId("uniqueId");
         restaurantService.save(restaurant);
         assertEquals(restaurant, restaurantService.findById("uniqueId"));
@@ -54,9 +52,9 @@ public class RestaurantServiceTest {
 
     @Test
     public void shouldReturnRecordsSortedByScoreWhichContainQueryInThierNameField(){
-        Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California");
+        Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California", "No. 24, Statue Road");
         restaurant1.setId("uniqueId1");
-        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA");
+        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA", "MG Road, Shop No 10");
         restaurant2.setId("uniqueId2");
         restaurantService.save(restaurant1);
         restaurantService.save(restaurant2);
@@ -68,9 +66,9 @@ public class RestaurantServiceTest {
 
     @Test
     public void shouldReturnRecordsContainingAllTheWordsInTheQuery(){
-        Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California");
+        Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California", "No. 24, Statue Road");
         restaurant1.setId("uniqueId1");
-        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA");
+        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA", "MG Road, Shop No 10");
         restaurant2.setId("uniqueId2");
         restaurantService.save(restaurant1);
         restaurantService.save(restaurant2);
@@ -81,9 +79,9 @@ public class RestaurantServiceTest {
 
     @Test
     public void shouldReturnSortedRecordsContainingAllTheWordsInTheQuery(){
-        Restaurant restaurant1 = new Restaurant("JW Marriot blu ", "California");
+        Restaurant restaurant1 = new Restaurant("JW Marriot blu ", "California", "No. 24, Statue Road");
         restaurant1.setId("uniqueId1");
-        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu blu", "LA");
+        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu blu", "LA", "No. 24, Statue Road");
         restaurant2.setId("uniqueId2");
         restaurantService.save(restaurant1);
         restaurantService.save(restaurant2);
@@ -95,9 +93,9 @@ public class RestaurantServiceTest {
 
     @Test
     public void shouldSearchOnCityField(){
-        Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California");
+        Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California", "No. 24, Statue Road");
         restaurant1.setId("uniqueId1");
-        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA");
+        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA", "MG Road, Shop No 10");
         restaurant2.setId("uniqueId2");
         restaurantService.save(restaurant1);
         restaurantService.save(restaurant2);
@@ -108,13 +106,21 @@ public class RestaurantServiceTest {
 
     @Test
     public void shouldNotSearchOnIdField(){
-        Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California");
+        Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California", "No. 24, Statue Road");
         restaurant1.setId("uniqueId1");
-        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA");
+        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA", "MG Road, Shop No 10");
         restaurant2.setId("uniqueId2");
         restaurantService.save(restaurant1);
         restaurantService.save(restaurant2);
         List<Restaurant> actual = restaurantService.findRestaurantsContaining("uniqueId1");
+        assertEquals(0, actual.size());
+    }
+
+    @Test
+    public void shouldNotSearchOnAddressField(){
+        Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California", "No. 24, Statue Road");
+        restaurantService.save(restaurant1);
+        List<Restaurant> actual = restaurantService.findRestaurantsContaining("statue");
         assertEquals(0, actual.size());
     }
 }

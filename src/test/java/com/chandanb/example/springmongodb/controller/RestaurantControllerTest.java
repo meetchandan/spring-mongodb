@@ -49,8 +49,8 @@ public class RestaurantControllerTest {
         ReflectionTestUtils.setField(restaurantService, "restaurantRepository",	restaurantRepository);
         ReflectionTestUtils.setField(restaurantService, "mongoProperties",	mongoProperties);
         ReflectionTestUtils.setField(restaurantService, "mongo",	mongo);
-        restaurant1 = new Restaurant("name one", "city1");
-        restaurant2 = new Restaurant("name two", "city2");
+        restaurant1 = new Restaurant("name one", "city1", "address1");
+        restaurant2 = new Restaurant("name two", "city2", "address2");
         ReflectionTestUtils.setField(restaurantController, "restaurantService", restaurantService);
 
         this.mockMvc = MockMvcBuilders.standaloneSetup(restaurantController).build();
@@ -70,8 +70,8 @@ public class RestaurantControllerTest {
         restaurantService.deleteAll();
         restaurantRepository.save(restaurant1);
         restaurantRepository.save(restaurant2);
-        String expectedRecord1 = "{\"name\" : \"name one\", \"city\" : \"city1\"}";
-        String expectedRecord2 = "{\"name\" : \"name two\", \"city\" : \"city2\"}";
+        String expectedRecord1 = "{\"name\" : \"name one\", \"city\" : \"city1\", \"address\" : \"address1\"}";
+        String expectedRecord2 = "{\"name\" : \"name two\", \"city\" : \"city2\", \"address\" : \"address2\"}";
         mockMvc.perform(get("/").accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
@@ -83,9 +83,9 @@ public class RestaurantControllerTest {
         restaurantService.deleteAll();
         restaurantRepository.save(restaurant1);
         restaurantRepository.save(restaurant2);
-        restaurantRepository.save(new Restaurant("otherRestaurant", "Singapore"));
-        String expectedRecord1 = "{\"name\" : \"name one\", \"city\" : \"city1\"}";
-        String expectedRecord2 = "{\"name\" : \"name two\", \"city\" : \"city2\"}";
+        restaurantRepository.save(new Restaurant("otherRestaurant", "Singapore", "address1"));
+        String expectedRecord1 = "{\"name\" : \"name one\", \"city\" : \"city1\",\"address\" : \"address1\"}";
+        String expectedRecord2 = "{\"name\" : \"name two\", \"city\" : \"city2\", \"address\" : \"address2\"}";
         mockMvc.perform(get("/search/name").accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
@@ -94,7 +94,7 @@ public class RestaurantControllerTest {
 
     // partial text search is not yet provided by mongodb  - Open Issue: https://jira.mongodb.org/browse/SERVER-15090
     @Test
-    public void shouldNotReturnRecordsWithOnlyPartially() throws Exception {
+    public void shouldReturnEmptyJsonOnPartialMatch() throws Exception {
         restaurantService.deleteAll();
         restaurantRepository.save(restaurant1);
         restaurantRepository.save(restaurant2);

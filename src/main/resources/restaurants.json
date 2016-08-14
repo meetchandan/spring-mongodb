@@ -1,80 +1,75 @@
-{"name" : "delhi heights", "city" : "delhi"}
-{"name" : "wine company", "city" : "gurgaon"}
-{"name" : "haldirams", "city" : "mumbai"}
-{"name": "Big Brewsky","city": "Bangalore"}
-{"name": "Peter Cat","city": "Kolkata"}
-{"name": "Tapri Central","city": "Jaipur"}
-{"name": "The Night Factory","city": "Chandigarh"}
-{"name": "Where Else Cafe","city": "Pune"}
-{"name": "Puffizza","city": "Ahmedabad"}
-{"name": "Cafe Goodluck","city": "Pune"}
-{"name": "Truffles","city": "Bangalore"}
-{"name": "Emprino","city": "Mumbai"}
-{"name": "Gurukripa","city": "Mumbai"}
-{"name": "Kota Kachori","city": "Bangalore"}
-{"name": "Shiraz Golden Restaurant","city": "Kolkata"}
-{"name": "NH 37 Dhaba","city": "Pune"}
-{"name": "Via Delhi","city": "Abu Dhabi"}
-{"name": "Arsalan","city": "Kolkata"}
-{"name": "Midnight Chef","city": "Chandigarh"}
-{"name": "Eva's Pizza","city": "Mumbai"}
-{"name": "Zaroob","city": "Dubai"}
-{"name": "Kabir Restaurant","city": "Ahmedabad"}
-{"name": "Wok On Fire","city": "Ahmedabad"}
-{"name": "York","city": "New Delhi"}
-{"name": "Los Angeles Restaurant" ,"city": "Mumbai"}
-{"name": "York Restaurant" ,"city": "New Delhi"}
-{"name": "York Restaurant" ,"city": "Gurgaon"}
-{"name": "Minar","city": "New Delhi"}
-{"name": "Darvesh","city": "New Delhi"}
-{"name": "Lazeez","city": "New Delhi"}
-{"name": "Jaika Pro","city": "New Delhi"}
-{"name": "Laziz","city": "New Delhi"}
-{"name": "Sethi","city": "New Delhi"}
-{"name": "Maharani","city": "Ghaziabad"}
-{"name": "Sethi","city": "New Delhi"}
-{"name": "Bikaner","city": "Delhi NC"}
-{"name": "Woks","city": "Noida"}
-{"name": "Cafe","city": "New Delhi"}
-{"name": "Cafe","city": "Ghaziabad"}
-{"name": "Era","city": "New Delhi"}
-{"name": "Zaika","city": "Gurgaon"}
-{"name": "New Kadimi","city": "New Delhi"}
-{"name": "York","city": "New Delhi"}
-{"name": "New York Restaurant" ,"city": "Gurgaon"}
-{"name": "Los Angeles Restaurant" ,"city": "Gurgaon"}
-{"name": "Minar","city": "New Delhi"}
-{"name": "Darvesh","city": "New Delhi"}
-{"name": "Lazeez","city": "New Delhi"}
-{"name": "Jaika","city": "New Delhi"}
-{"name": "Laziz","city": "New Delhi"}
-{"name": "Sethi","city": "New Delhi"}
-{"name": "Maharani","city": "Ghaziabad"}
-{"name": "Sethi","city": "New Delhi"}
-{"name": "Bikaner","city": "Delhi NC"}
-{"name": "Woks","city": "Noida"}
-{"name": "Cafe","city": "New Delhi"}
-{"name": "Cafe","city": "Ghaziabad"}
-{"name": "Era","city": "New Delhi"}
-{"name": "New Zaika","city": "Gurgaon"}
-{"name": "New Kadimi","city": "New Delhi"}
-{"name": "Cafe Zoe","city": "Bangalore"}
-{"name": "Malaka Spice","city": "Hyderabad"}
-{"name": "Chili's","city": "Hyderabad"}
-{"name": "Russo's New Y","city": "Hyderabad"}
-{"name": "The Cape Kitc","city": "Hyderabad"}
-{"name": "Tales & Spirits","city": "Hyderabad"}
-{"name": "Indian Summer","city": "Hyderabad"}
-{"name": "Gulati","city": "Bangalore"}
-{"name": "Chick's Burgers","city": "Bangalore"}
-{"name": "AJA","city": "Bangalore"}
-{"name": "Onesta","city": "Bangalore"}
-{"name": "Meghana Foods","city": "Pune"}
-{"name": "Little Bangko","city": "Pune"}
-{"name": "Vadakkan Pepp","city": "Pune"}
-{"name": "German Bakery","city": "Pune"}
-{"name": "Rasoi Ghar","city": "Bangalore"}
-{"name": "Kalsang Frien","city": "Bangalore"}
-{"name": "Empire Restau","city": "Mumbai"}
-{"name": "Burger King","city": "Mumbai"}
-{"name": "Food Freaks","city": "Mumbai"}
+{"name" : "delhi heights", "city" : "delhi","address": "Hotel York, K-10/11, Connaught Place"}
+{"name" : "wine company", "city" : "gurgaon","address": "170-171, 179-180, 1st Floor, Good Earth City Center, Sector 50"}
+{"name" : "haldirams", "city" : "mumbai","address": "50, Hauz Khas Village"}
+{"name": "Big Brewsky","city": "Bangalore","address": "E-584, Near Savitri Cinema, Greater Kailash (GK) 2"}
+{"name": "Peter Cat","city": "Kolkata","address": "67, Ground Floor, Good Earth City Center, Sector 50"}
+{"name": "Tapri Central","city": "Jaipur","address": "M-65, M Block Market, Greater Kailash (GK) 1"}
+{"name": "The Night Factory","city": "Chandigarh","address": "B.D. Estate Market, Timarpur, Civil Lines"}
+{"name": "Where Else Cafe","city": "Pune","address": "A1/325, Near Ayodhya Chowk, Sector 6, Rohini"}
+{"name": "Puffizza","city": "Ahmedabad","address": "PVR Anupam Compelex, Saket"}
+{"name": "Cafe Goodluck","city": "Pune","address": "9 C, Taimoor Nagar, Near Honey Money Top, New Friends Colony"}
+{"name": "Truffles","city": "Bangalore","address": "M-60, M Block Market, Greater Kailash (GK) 2"}
+{"name": "Emprino","city": "Mumbai","address": "D-34, RDC, Raj Nagar"}
+{"name": "Gurukripa","city": "Mumbai","address": "E-209, Lajpat Nagar 1"}
+{"name": "Kota Kachori","city": "Bangalore","address": "G 6 & 8, Mafcons Plaza, Central Market, Sector 7, Dwarka"}
+{"name": "Shiraz Golden Restaurant","city": "Kolkata","address": "102 & 103, Food Court, Supertech Shopprix Mall, Sector 61"}
+{"name": "NH 37 Dhaba","city": "Pune","address": "LCA, Jaina Towers. District Center, Janakpuri"}
+{"name": "Via Delhi","city": "Abu Dhabi","address": "3rd Floor, Near Food Court, EDM Mall, Kaushambi"}
+{"name": "Arsalan","city": "Kolkata","address": "D 20, West Patel Nagar"}
+{"name": "Midnight Chef","city": "Chandigarh","address": "IFFCO Chowk, MG Road"}
+{"name": "Eva's Pizza","city": "Mumbai","address": "1 & 2, C-5A, Kadimi Market, Janakpuri"}
+{"name": "Zaroob","city": "Dubai","address": "Mathuradas Mills Compound, NM Joshi Marg, Lower Parel"}
+{"name": "Kabir Restaurant","city": "Ahmedabad","address": "Lane 5, Opposite Oxford Properties, North Main Road, Koregaon Park"}
+{"name": "Wok On Fire","city": "Ahmedabad","address": "Flat 48, Ground Floor, Opposite Vengal Rao Park, Road 1, Banjara Hills"}
+{"name": "York","city": "New Delhi","address": "Level 2, Al Wahda Mall, Al Wahda, Ab"}
+{"name": "Los Angeles Restaurant" ,"city": "Mumbai","address": "1215 Phillip Island Road, Phillip Island"}
+{"name": "Yale Restaurant" ,"city": "New Delhi","address": "Plot 64, Shivaji Housing Society, Off Senapati Bapat Road, Senapati Bapat Road"}
+{"name": "Yale Restaurant" ,"city": "Gurgaon","address": "Shop 5, Khafajy Building, Al Karama"}
+{"name": "Minar","city": "New Delhi","address": "6, Pandara Road Market, Ne"}
+{"name": "Darvesh","city": "New Delhi","address": "502 Main St, Baldwin, L"}
+{"name": "Lazeez","city": "New Delhi","address": "SCO 4, Sector 11"}
+{"name": "Jaika","city": "New Delhi","address": "501, Binnamangala Extension, 1st stage, C.M.H Road, Indiranagar"}
+{"name": "Laziz","city": "New Delhi","address": "124, Near Jyothi Nivas College, 1st Cross, KHB Colony, Koramangala 5th Block"}
+{"name": "Sethi","city": "New Delhi","address": "UP Tower, Near Emirates Tower Metro Station, Sheikh Zayed Road, Trade Centre Area"}
+{"name": "Maharani","city": "Ghaziabad","address": "Near New City Center Supermarket, Abu Shagara"}
+{"name": "Sethi","city": "New Delhi","address": "291, North Main Road, Koregaon Park"}
+{"name": "Bikaner","city": "Delhi NC","address": "Zainal Mohebi Plaza, Sheikh Khalifa Bin Zayed Road, Opposite Centrepoint, Al Karama"}
+{"name": "Woks","city": "Noida","address": "88 A, Opposite Osho, Chander Lok Colony, Rajpur Road, Hathibarkala Salwala"}
+{"name": "Cafe","city": "New Delhi","address": "4, Opposite NMKRV College, 21st C Cross Road, 3rd Block, Jayanagar"}
+{"name": "Cafe","city": "Ghaziabad","address": "Phoenix Market City, Viman Nagar"}
+{"name": "Era","city": "New Delhi","address": "1Starboard Drive, Bowen"}
+{"name": "Zaika","city": "Gurgaon","address": "Behind MK Retail, Before WIPRO Corporate Office, Sarjapur Road"}
+{"name": "Kadimi","city": "New Delhi","address": "18A, Park Street, Park Street Area"}
+{"name": "York","city": "New Delhi","address": "B4 E, 3rd Floor, Surana Jewellers, Opposite Central Park, C Scheme"}
+{"name": "New York Restaurant" ,"city": "Gurgaon","address": "Phase 1, Chandigarh Industrial Area"}
+{"name": "Los Angeles Restaurant" ,"city": "Gurgaon","address": "Shop 8, Ground Floor, Lunkad Sky Max, Datta Mandir Chowk, Viman Nagar"}
+{"name": "Minar","city": "New Delhi","address": "103, Kairos, Opposite Mahatma Gandhi Labour Institute, Drive In Road, Gurukul"}
+{"name": "Darvesh","city": "New Delhi","address": "759/75, Goodluck Chowk, Deccan Gymkhana"}
+{"name": "Lazeez","city": "New Delhi","address": "28, 4th 'B' Cross, 5th Block, Koramangala, Koramangala 5th Block"}
+{"name": "Jaika","city": "New Delhi","address": "Shop B/3, Gagangiri Premise CHS, Union Park Road, Carter Road, Bandr"}
+{"name": "Laziz","city": "New Delhi","address": "55, Thunga Village, Opposite Local Office Bus Stop, Saki Vihar Road, Powai"}
+{"name": "Sethi","city": "New Delhi","address": "635, 100 Feet Road, Koramangala 6th Block"}
+{"name": "Maharani","city": "Ghaziabad","address": "135, Park Street, Park Street Area"}
+{"name": "Sethi","city": "New Delhi","address": "Range Hill Corner, Ganesh Khind Road, Shivaji Nagar"}
+{"name": "New Bikaner","city": "Delhi NC","address": "Near First Flight Couriers, Behind ADNOC Head Office, Salam Street, Najda Area, Najda, Ab"}
+{"name": "New Woks","city": "Noida","address": "28, Circus Avenue, Near A.J.C. Bose Road Flyover, Park Circus Area"}
+{"name": "New Cafe","city": "New Delhi","address": "SCO 329-332, Sector 35B, Sector 35"}
+{"name": "New Cafe","city": "Ghaziabad","address": "7, Harmony Apartments, Off Military Road, Marol"}
+{"name": "New Era","city": "New Delhi","address": "Shop 1, Jumeirah Tower Building, Sheikh Zayad Road, Trade Centre Area"}
+{"name": "New Zaika","city": "Gurgaon","address": "JB Tower, Opposite Doordarshan Kendra, Drive In Road, Gurukul"}
+{"name": "New Kadimi","city": "New Delhi","address": "1, Aeon Complex, Opposite Navkar Institute, Vijay Cross Roads, Navrangpura"}
+{"name": "Cafe Zoe","city": "Bangalore","address": "Bharat Mata Road"}
+{"name": "Malaka Spice","city": "Hyderabad","address": "Sky Tower Road"}
+{"name": "Chili's","city": "Hyderabad","address": "1, MG Road"}
+{"name": "Russo's New Y","city": "Hyderabad","address": "1, Lincoln Marg"}
+{"name": "The Cape Kitc","city": "Hyderabad","address": "2, WCE Collge Road"}
+{"name": "Tales & Spirits","city": "Hyderabad","address": "5, KK Wagh Collge"}
+{"name": "Indian Summer","city": "Hyderabad","address": "abraham institute"}
+{"name": "Gulati","city": "Bangalore","address": "lost org near temple"}
+{"name": "Chick's Burgers","city": "Bangalore","address": "ganpati bappa mandir bada"}
+{"name": "AJA","city": "Bangalore","address": "1, Wani classes near"}
+{"name": "Onesta","city": "Bangalore","address": "Bhai Mhane nako maru"}
+{"name": "Meghana Foods","city": "Pune","address": "viman nagar, kp"}
+{"name": "Little Bangko","city": "Pune","address": "sinhagad road"}
+{"name": "Vadakkan Pepp","city": "Pune","address": "Indian Express Office, KP"}
+{"name": "German Bakery","city": "Pune","address": "1, kk bhai"}

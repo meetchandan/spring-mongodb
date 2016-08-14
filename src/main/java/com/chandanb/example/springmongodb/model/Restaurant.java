@@ -24,11 +24,14 @@ public class Restaurant implements Serializable, Comparable<Restaurant> {
     @TextIndexed(weight = 1.5f)
     private String city;
 
+    @Field
+    private String address;
     @TextScore
     private Float score;
-    public Restaurant(String name, String city) {
+    public Restaurant(String name, String city, String address) {
         this.name = name;
         this.city = city;
+        this.address = address;
     }
 
     public Restaurant(){}
@@ -71,5 +74,13 @@ public class Restaurant implements Serializable, Comparable<Restaurant> {
     public int compareTo(Restaurant o) {
         if(this.score >= o.score) return 1;
         return 0;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
