@@ -56,6 +56,10 @@
             <version>r05</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
             <groupId>junit-addons</groupId>
             <artifactId>junit-addons</artifactId>
             <version>1.4</version>
