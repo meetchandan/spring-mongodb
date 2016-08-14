@@ -2,7 +2,6 @@ package com.chandanb.example.springmongodb.service;
 
 import com.chandanb.example.springmongodb.Application;
 import com.chandanb.example.springmongodb.model.Restaurant;
-import junitx.framework.ListAssert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +11,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import javax.inject.Inject;
 import java.util.List;
 
-import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 
 
@@ -64,7 +62,7 @@ public class RestaurantServiceTest {
         restaurant2.setId("uniqueId2");
         restaurantService.save(restaurant1);
         restaurantService.save(restaurant2);
-        List<Restaurant> actual = restaurantService.findRestaurantsWithNameContaining("marriot");
+        List<Restaurant> actual = restaurantService.findRestaurantsContaining("marriot");
         assertEquals(2, actual.size());
         assertEquals(restaurant2, actual.get(0));
         assertEquals(restaurant1, actual.get(1));
@@ -78,7 +76,7 @@ public class RestaurantServiceTest {
         restaurant2.setId("uniqueId2");
         restaurantService.save(restaurant1);
         restaurantService.save(restaurant2);
-        List<Restaurant> actual = restaurantService.findRestaurantsWithNameContaining("marriot blu");
+        List<Restaurant> actual = restaurantService.findRestaurantsContaining("marriot blu");
         assertEquals(1, actual.size());
         assertEquals(restaurant2, actual.get(0));
     }
@@ -91,7 +89,7 @@ public class RestaurantServiceTest {
         restaurant2.setId("uniqueId2");
         restaurantService.save(restaurant1);
         restaurantService.save(restaurant2);
-        List<Restaurant> actual = restaurantService.findRestaurantsWithNameContaining("marriot blu");
+        List<Restaurant> actual = restaurantService.findRestaurantsContaining("marriot blu");
         assertEquals(2, actual.size());
         assertEquals(restaurant2, actual.get(0));
         assertEquals(restaurant1, actual.get(1));
@@ -105,7 +103,7 @@ public class RestaurantServiceTest {
         restaurant2.setId("uniqueId2");
         restaurantService.save(restaurant1);
         restaurantService.save(restaurant2);
-        List<Restaurant> actual = restaurantService.findRestaurantsWithNameContaining("California");
+        List<Restaurant> actual = restaurantService.findRestaurantsContaining("California");
         assertEquals(1, actual.size());
         assertEquals(restaurant1, actual.get(0));
     }

@@ -28,6 +28,6 @@ public class RestaurantController {
     @CrossOrigin(origins = "http://localhost:8000")
     @RequestMapping(value = "/search/{query}", method = RequestMethod.GET)
     public List<Restaurant> getMatching(@PathVariable("query") String query, Model model) {
-        return restaurantService.findRestaurantsWithNameContaining(query);
+        return restaurantService.findRestaurantsContaining(query);
     }
 }
