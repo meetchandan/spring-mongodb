@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ErrorController {
 
-    final Logger logger = LoggerFactory.getLogger(ErrorController.class);
-
     @CrossOrigin(origins = "http://localhost:8000")
     @RequestMapping(method= RequestMethod.GET)
     public String getErrorMessage() {

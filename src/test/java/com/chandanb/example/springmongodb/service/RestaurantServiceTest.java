@@ -25,7 +25,7 @@ public class RestaurantServiceTest {
     @Before
     public void setup() throws Exception {
         restaurantService.deleteAll();
-        restaurantService.restoreDefaultRecords();
+        restaurantService.restoreDefaultRestaurantRecords();
         defaultRestaurantCount = restaurantService.findAll().size();
     }
 

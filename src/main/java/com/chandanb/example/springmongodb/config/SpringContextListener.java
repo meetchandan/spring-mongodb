@@ -15,10 +15,9 @@ public class SpringContextListener implements ApplicationListener<ContextRefresh
 
 
 	public void onApplicationEvent(ContextRefreshedEvent event) {
-		System.out.print("In onAppEvent");
 		restaurantService.deleteAll();
 		try {
-			restaurantService.restoreDefaultRecords();
+			restaurantService.restoreDefaultRestaurantRecords();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -28,6 +28,7 @@ public class RestaurantController {
     @CrossOrigin(origins = "http://localhost:8000")
     @RequestMapping(value = "/search/{query}", method = RequestMethod.GET)
     public List<Restaurant> getMatching(@PathVariable("query") String query, Model model) {
+        logger.info("Received a search request with term: " + query);
         return restaurantService.findRestaurantsContaining(query);
     }
 }

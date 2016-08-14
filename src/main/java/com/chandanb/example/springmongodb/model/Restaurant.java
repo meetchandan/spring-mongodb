@@ -39,7 +39,7 @@ public class Restaurant implements Serializable, Comparable<Restaurant> {
     public String getId() {
         return id;
     }
-
+    
     public void setId(String id) {
         this.id = id;
     }
@@ -60,27 +60,25 @@ public class Restaurant implements Serializable, Comparable<Restaurant> {
         this.city = city;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        Restaurant res = (Restaurant) o;
-
-        return Objects.equals(id, res.id);
-
-    }
-
-    @Override
-    public int compareTo(Restaurant o) {
-        if(this.score >= o.score) return 1;
-        return 0;
-    }
-
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        Restaurant res = (Restaurant) o;
+        return Objects.equals(id, res.id);
+    }
+
+    @Override
+    public int compareTo(Restaurant o) {
+        if(this.score >= o.score) return 1;
+        return 0;
     }
 }
