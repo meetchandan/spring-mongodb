@@ -2,6 +2,7 @@ package com.chandanb.example.springmongodb.service;
 
 import com.chandanb.example.springmongodb.model.Restaurant;
 import com.chandanb.example.springmongodb.repository.RestaurantRepository;
+import com.chandanb.example.springmongodb.utils.ListUtils;
 import com.google.common.collect.Lists;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -21,7 +22,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
-import java.util.List;
+import java.util.*;
 
 @Service
 
@@ -41,9 +42,18 @@ public class RestaurantService {
         return Lists.newArrayList(restaurantRepository.findAll());
     }
 
-    public List<Restaurant> findRestaurantsWithNameContaining(String name){
-        TextCriteria textCriteria = new TextCriteria().matchingAny(name);
-        return Lists.newArrayList(restaurantRepository.findAllByOrderByScoreDesc(textCriteria));
+    public List<Restaurant> findRestaurantsWithNameContaining(String query){
+        TextCriteria textCriteria = new TextCriteria().matchingAny(query);
+        ArrayList<Restaurant> restaurants = Lists.newArrayList(restaurantRepository.
+                findAllByOrderByScoreDesc(textCriteria));
+        String[] words = query.split(" ");
+        List<Restaurant> finalList  = new ArrayList<>(restaurants);
+        for(String w: words){
+            List<Restaurant> restaurantsMatchingASingleWord = restaurantRepository.findAllByOrderByScoreDesc(new TextCriteria().matching(w));
+            finalList = ListUtils.intersection(finalList, restaurantsMatchingASingleWord);
+        }
+        Collections.sort(finalList);
+        return finalList;
     }
 
     public Restaurant findByName(String name) {

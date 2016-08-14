@@ -59,12 +59,40 @@ public class RestaurantServiceTest {
     @Test
     public void shouldReturnRecordsSortedByScoreWhichContainQueryInThierNameField(){
         Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California");
-        restaurant1.setId("uniqueId");
-        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA");
         restaurant1.setId("uniqueId1");
+        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA");
+        restaurant2.setId("uniqueId2");
         restaurantService.save(restaurant1);
         restaurantService.save(restaurant2);
         List<Restaurant> actual = restaurantService.findRestaurantsWithNameContaining("marriot");
+        assertEquals(2, actual.size());
+        assertEquals(restaurant2, actual.get(0));
+        assertEquals(restaurant1, actual.get(1));
+    }
+
+    @Test
+    public void shouldReturnRecordsContainingAllTheWordsInTheQuery(){
+        Restaurant restaurant1 = new Restaurant("JW Marriot Pasha", "California");
+        restaurant1.setId("uniqueId1");
+        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu", "LA");
+        restaurant2.setId("uniqueId2");
+        restaurantService.save(restaurant1);
+        restaurantService.save(restaurant2);
+        List<Restaurant> actual = restaurantService.findRestaurantsWithNameContaining("marriot blu");
+        assertEquals(1, actual.size());
+        assertEquals(restaurant2, actual.get(0));
+    }
+
+    @Test
+    public void shouldReturnSortedRecordsContainingAllTheWordsInTheQuery(){
+        Restaurant restaurant1 = new Restaurant("JW Marriot blu ", "California");
+        restaurant1.setId("uniqueId1");
+        Restaurant restaurant2 = new Restaurant("Marriot marriot Blu blu", "LA");
+        restaurant2.setId("uniqueId2");
+        restaurantService.save(restaurant1);
+        restaurantService.save(restaurant2);
+        List<Restaurant> actual = restaurantService.findRestaurantsWithNameContaining("marriot blu");
+        assertEquals(2, actual.size());
         assertEquals(restaurant2, actual.get(0));
         assertEquals(restaurant1, actual.get(1));
     }

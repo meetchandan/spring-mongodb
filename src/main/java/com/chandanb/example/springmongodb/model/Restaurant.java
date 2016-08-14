@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Document(collection = "restaurants")
-public class Restaurant implements Serializable {
+public class Restaurant implements Serializable, Comparable<Restaurant> {
     @Id
     private String id;
 
@@ -64,5 +64,11 @@ public class Restaurant implements Serializable {
 
         return Objects.equals(id, res.id);
 
+    }
+
+    @Override
+    public int compareTo(Restaurant o) {
+        if(this.score >= o.score) return 1;
+        return 0;
     }
 }
